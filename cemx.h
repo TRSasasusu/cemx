@@ -6,9 +6,16 @@
 class InfoFromDotFile {
 	public:
 		InfoFromDotFile();
+		std::string GetBashPath() { return bash_path_; }
 	private:
 		bool IsDotFileExist();
-		static const std::string filename;
+		std::string bash_path_;
+		static const std::string filename_;
+};
+
+class OpenPane {
+	public:
+		static void OpenBash(std::string bash_path, std::string option);
 };
 
 #endif // CEMX_H
