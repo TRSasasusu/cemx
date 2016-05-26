@@ -1,0 +1,5 @@
+*~
+*.swp
+tmux_conemu*
+*.exe
+*.o
