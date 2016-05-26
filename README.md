@@ -14,5 +14,8 @@ $ git clone git://github.com/TRSasasusu/cemx.git
 $ cd cemx  
 $ make  
 Then, set cemx.exe in your Path. (e.g. /usr/local/bin)  
+Moreover, write the dot-file, .cemxrc  
+e.g.  
+bash:c:\msys64\usr\bin\bash.exe
 ## License
 GPLv3
