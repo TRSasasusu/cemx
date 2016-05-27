@@ -1,22 +1,23 @@
 # cemx
-We want to use tmux in MSYS2 in ConEmu. There is also [connector](https://conemu.github.io/en/CygwinMsysConnector.html), but when you run it, you cannot run python in interactive mode without winpty. (They are great programs)  
+We want to use tmux in MSYS2 in ConEmu. There is also [connector](https://conemu.github.io/en/CygwinMsysConnector.html), but when you run it, you cannot run interactive programs without winpty. (They are great programs)  
 Then, ConEmu has a function that you can make panes and tabs.  
 Therefore, I made a program which use this function, and you can use it easily in MSYS2.
 ## Usage
 Make a tab.  
 $ cemx  
 Make a right pane.  
-$ cemx %  
+$ cemx s  
 Make an under pane.  
-$ cemx "  
+$ cemx sV  
+Please see other examples in [ConEmu official website](https://conemu.github.io/en/NewConsole.html)
 ## Compile
 $ git clone git://github.com/TRSasasusu/cemx.git  
 $ cd cemx  
 $ make  
-Then, set cemx.exe in your Path. (e.g. /usr/local/bin)  
-Moreover, write the dot-file, .cemxrc in the same directory as cemx.exe  
+Then, set cemx.exe in your PATH. (e.g. /usr/local/bin)  
+cemx.exe can find your bash.exe automatically from PATH.
+Moreover, you can write the dot-file, .cemxrc in the same directory as cemx.exe  
 e.g.  
 bash:c:\msys64\usr\bin\bash.exe  
-(If you do not make .cemxrc, cemx.exe explore bash.exe in this path)
 ## License
-GPLv3
+GNU General Public License v3.0
