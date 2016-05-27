@@ -1,13 +1,25 @@
 #include <string>
 #include <fstream>
 #include <sys/stat.h>
+#include <stdio.h>
 #include "cemx.h"
 
 const std::string InfoFromDotFile::filename_ = ".cemxrc";
 
 InfoFromDotFile::InfoFromDotFile() {
 	if(!IsDotFileExist()) {
-		bash_path_ = "c:\\msys64\\usr\\bin\\bash.exe\\";
+		std::string str = "";
+		char buff[1024];
+		FILE *fp = popen("where bash.exe", "r");
+		while (fgets(buff, sizeof(buff), fp)) {
+			//printf("fgets: %s", str);
+			str += buff;
+		}
+		pclose(fp);
+
+		bash_path_ = str.substr(0, str.find("bash.exe") + 8);
+
+		//bash_path_ = "c:\\msys64\\usr\\bin\\bash.exe\\";
 		return;
 	}
 
