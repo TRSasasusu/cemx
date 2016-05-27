@@ -1,12 +1,13 @@
 #include <string>
 #include <fstream>
 #include <stdio.h>
+#include <iostream>
 #include "cemx.h"
 
 const std::string InfoFromDotFile::filename_ = ".cemxrc";
 
-InfoFromDotFile::InfoFromDotFile() {
-	std::ifstream read_file(filename_.c_str(), std::ios::in);
+InfoFromDotFile::InfoFromDotFile(std::string its_path) {
+	std::ifstream read_file((its_path.substr(0, its_path.find("cemx.exe")) + filename_).c_str(), std::ios::in);
 
 	if(!read_file) {
 		std::string str = "";
@@ -21,7 +22,6 @@ InfoFromDotFile::InfoFromDotFile() {
 		return;
 	}
 
-	//std::ifstream read_file(filename_.c_str(), std::ios::in);
 	while(!read_file.eof()) {
 		std::string str;
 		std::getline(read_file, str);

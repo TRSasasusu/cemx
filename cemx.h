@@ -5,7 +5,7 @@
 
 class InfoFromDotFile {
 	public:
-		InfoFromDotFile();
+		InfoFromDotFile(std::string its_path);
 		std::string GetBashPath() { return bash_path_; }
 	private:
 		std::string bash_path_;

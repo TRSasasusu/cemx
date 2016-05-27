@@ -11,7 +11,7 @@ void help() {
 }
 
 int main(int argc, char *argv[]) {
-	InfoFromDotFile info_from_dot_file;
+	InfoFromDotFile info_from_dot_file(argv[0]);
 
 	if(argc == 1) {
 		OpenPane::OpenBash(info_from_dot_file.GetBashPath(), "");
