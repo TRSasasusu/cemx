@@ -3,11 +3,12 @@
 #include "cemx.h"
 
 void help() {
-	std::cout << "usage: cemx [options]" << std::endl;
+	std::cout << "Usage: cemx [options]" << std::endl;
 	std::cout << "Options:" << std::endl;
 	std::cout << "  --help            Display this information" << std::endl;
-	std::cout << "  \%                 Split horizontally" << std::endl;
-	std::cout << "  \"                 Split vertically" << std::endl;
+	std::cout << "  s                 Split horizontally" << std::endl;
+	std::cout << "  sV                Split vertically" << std::endl;
+	std::cout << "Please see other examples in ConEmu official website, https://conemu.github.io/en/NewConsole.html" << std::endl;
 }
 
 int main(int argc, char *argv[]) {
@@ -18,6 +19,9 @@ int main(int argc, char *argv[]) {
 	}
 	else if(argc == 2) {
 		if(strcmp(argv[1], "--help") == 0) {
+			help();
+		}
+		else if(strcmp(argv[1], "-h") == 0) {
 			help();
 		}
 		else {
