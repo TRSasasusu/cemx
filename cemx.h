@@ -8,7 +8,6 @@ class InfoFromDotFile {
 		InfoFromDotFile();
 		std::string GetBashPath() { return bash_path_; }
 	private:
-		bool IsDotFileExist();
 		std::string bash_path_;
 		static const std::string filename_;
 };
